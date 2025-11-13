@@ -28,7 +28,7 @@ def _get_all_json_refs(item: Any) -> set[JsonRef]:
 def sort_chat_inputs_first(self, vertices_layers: list[list[str]]) -> list[list[str]]:
     """Sort vertices to prioritize chat inputs in the first layer."""
     # First check if any chat inputs have dependencies
-    # bubble sort
+    # bubble sort optimized
     for layer in vertices_layers:
         for vertex_id in layer:
             if "ChatInput" in vertex_id and self.get_predecessors(
